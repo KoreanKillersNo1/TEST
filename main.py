@@ -14,7 +14,7 @@ async def on_ready():
     print('테스트 봇 이제 사용 하셔도 좋습니다')
     print('운영자 : 킬쟁이')
     game = discord.Game('코드 봇ㅣ!도움말ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ')
-    await client.change_presence(status=discord.Status.online, activity=game)
+    await bot.change_presence(status=discord.Status.online, activity=game)
 
 @bot.command()
 async def 안녕(ctx):
