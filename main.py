@@ -22,7 +22,7 @@ async def 안녕(ctx):
 
 @bot.command()
 async def 도움(ctx):
-    embed = discord.Embed(title = "TEST Bot", description = "업글할 예정", color = 0x6E17E3) 
+    embed = discord.Embed(title = "GAME Bot", description = "업글할 예정", color = 0x6E17E3) 
     embed.add_field(name = bot.command_prefix + "도움", value = "도움말을 봅니다", inline = False)
     embed.add_field(name="─────────정보─────────", value="ㅤ", inline=False)
     embed.add_field(name = bot.command_prefix + "회원가입", value = "각종 컨텐츠를 즐기기 위한 회원가입을 합니다", inline = False)
@@ -307,6 +307,7 @@ async def on_message(message):
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
         await ctx.send("명령어를 찾지 못했습니다. !도움을 입력하여 명령어를 확인하세요.")
+        
 access_token = os.environ["BOT_TOKEN"]
 bot.run(access_token)
 
