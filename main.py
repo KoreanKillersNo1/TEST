@@ -5,7 +5,7 @@ from user import *
 from discord.ext import commands
 
 
-bot = commands.Bot(command_prefix=".!")
+bot = commands.Bot(command_prefix="q!")
 
 @bot.event
 async def on_ready():
