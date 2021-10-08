@@ -13,7 +13,7 @@ async def on_ready():
     print('성공적으로 봇이 시작되었습니다.')
     print('테스트 봇 이제 사용 하셔도 좋습니다')
     print('운영자 : 킬쟁이')
-    game = discord.Game('코드 봇ㅣ!도움말ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ')
+    game = discord.Game('TEST 봇ㅣ!도움말ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ')
     await bot.change_presence(status=discord.Status.online, activity=game)
 
 @bot.command()
@@ -22,7 +22,7 @@ async def 안녕(ctx):
 
 @bot.command()
 async def 도움(ctx):
-    embed = discord.Embed(title = "CODE Bot", description = "업글할 예정", color = 0x6E17E3) 
+    embed = discord.Embed(title = "TEST Bot", description = "업글할 예정", color = 0x6E17E3) 
     embed.add_field(name = bot.command_prefix + "도움", value = "도움말을 봅니다", inline = False)
     embed.add_field(name="─────────정보─────────", value="ㅤ", inline=False)
     embed.add_field(name = bot.command_prefix + "회원가입", value = "각종 컨텐츠를 즐기기 위한 회원가입을 합니다", inline = False)
