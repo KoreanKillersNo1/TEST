@@ -4,14 +4,14 @@ from game import *
 from user import *
 from discord.ext import commands
 
+
 bot = commands.Bot(command_prefix=".!")
-token = open("token.txt", "r").readline()
 
 @bot.event
 async def on_ready():
     print(bot.user.name)
     print('성공적으로 봇이 시작되었습니다.')
-    print('코드 봇 이제 사용 하셔도 좋습니다')
+    print('테스트 봇 이제 사용 하셔도 좋습니다')
     print('운영자 : 킬쟁이')
     game = discord.Game('코드 봇ㅣ!도움말ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ')
     await client.change_presence(status=discord.Status.online, activity=game)
