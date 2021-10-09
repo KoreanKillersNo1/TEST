@@ -6,6 +6,7 @@ from discord.ext import commands
 
 
 bot = commands.Bot(command_prefix="q!")
+bot.remove.command('help')
 
 @bot.event
 async def on_ready():
@@ -260,6 +261,35 @@ async def 송금(ctx, user: discord.User, money):
             await ctx.send("돈이 충분하지 않습니다. 현재 자산: " + str(s_money))
 
         print("------------------------------\n")
+
+@bot.command()
+async def 버튼(salf, ctx):
+    await ctx.channel.send(
+        "버튼 테스트  :saile:,
+        components=[
+            button(style=ButtonStyle.blue, label="버튼 1")
+            button(style=ButtonStyle.red, label="버튼 2")
+            button(style=ButtonStyle.URL, label='사진', url=avatarowner)
+        ],
+    )
+    
+    res = await self.bot.wait_for("버튼 클릭")
+    if res.channel == ctx.channel:
+        await res.respond(
+            type=InteractionType.ChannelMessageWithSource,
+            content=f"{res.component.label} 클릭 고맙 이것은 테스트이다."
+        
+        )
+    
+    res2 = await self.bot.wait_for("버튼 클릭")
+    if res2.channel == ctx.channel:
+        await res.respond(
+            type=InteractionType.ChannelMessageWithSource,
+            content=f"{res.component.label} 클릭 고맙 이것은 테스트이다."
+        
+        )
+
+    
 
 
 @bot.command()
