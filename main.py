@@ -262,33 +262,6 @@ async def 송금(ctx, user: discord.User, money):
 
         print("------------------------------\n")
 
-@bot.command()
-async def 버튼(salf, ctx):
-    await ctx.channel.send(
-        "버튼 테스트",
-        components=[
-            button(style=ButtonStyle.blue, label="버튼 1")
-            button(style=ButtonStyle.red, label="버튼 2")
-            button(style=ButtonStyle.URL, label='사진', url=avatarowner)
-        ],
-    )
-    
-    res = await self.bot.wait_for("버튼 클릭")
-    if res.channel == ctx.channel:
-        await res.respond(
-            type=InteractionType.ChannelMessageWithSource,
-            content=f"{res.component.label} 클릭 고맙 이것은 테스트이다."
-        
-        )
-    
-    res2 = await self.bot.wait_for("버튼 클릭")
-    if res2.channel == ctx.channel:
-        await res.respond(
-            type=InteractionType.ChannelMessageWithSource,
-            content=f"{res.component.label} 클릭 고맙 이것은 테스트이다."
-        
-        )
-
     
 @bot.command(name="인증", pass_context=True)
 async def _유저인증(ctx, member: discord.Member=None):
