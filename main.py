@@ -35,7 +35,7 @@ async def 도움(ctx):
     await ctx.send(embed=embed)
 
 @bot.command()
-async def 개발자(ctx)
+async def 개발자(ctx):
     embed = discord.Embed(title = "개발자", description = "『킬쟁이』#1798", color = 0x6E1753
     
 @bot.command()
