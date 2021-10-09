@@ -271,7 +271,7 @@ async def _유저인증(ctx, member: discord.Member=None):
 
 @bot.command(name="리로드")
 async def reload_commands(ctx, extension=None):
-    if extension is None: # extension이 None이면 (그냥 !리로드 라고 썼을 때)
+    if extension is None:
         for filename in os.listdir("Cogs"):
             if filename.endswith(".py"):
                 bot.unload_extension(f"Cogs.{filename[:-3]}")
@@ -331,7 +331,7 @@ async def on_message(message):
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandNotFound):
-        await ctx.send("명령어를 찾지 못했습니다. !도움을 입력하여 명령어를 확인하세요.")
+        await ctx.send("명령어를 찾지 못했습니다. q!도움을 입력하여 명령어를 확인하세요.")
         
 access_token = os.environ["BOT_TOKEN"]
 bot.run(access_token)
