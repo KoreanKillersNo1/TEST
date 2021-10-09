@@ -8,6 +8,10 @@ from discord.ext import commands
 bot = commands.Bot(command_prefix="q!")
 bot.remove_command("help")
 
+for filename in os.listdir("Cogs"):
+    if filename.endswith(".py"):
+        app.load_extension(f"Cogs.{filename[:-3]}")
+
 @bot.event
 async def on_ready():
     print(bot.user.name)
