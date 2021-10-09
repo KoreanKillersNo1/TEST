@@ -290,7 +290,27 @@ async def 버튼(salf, ctx):
         )
 
     
+@bot.command(name="인증", pass_context=True)
+async def _유저인증(ctx, member: discord.Member=None):
+    member = member or ctx.message.author
+    await member.add_roles(get(ctx.guild.roles, name="[일반 유저]"))
+    await ctx.channel.send(str(member)+"에게 역할이 적용되었습니다.")
 
+@bot.command(name="리로드")
+async def reload_commands(ctx, extension=None):
+    if extension is None: # extension이 None이면 (그냥 !리로드 라고 썼을 때)
+        for filename in os.listdir("Cogs"):
+            if filename.endswith(".py"):
+                app.unload_extension(f"Cogs.{filename[:-3]}")
+                app.load_extension(f"Cogs.{filename[:-3]}")
+                await ctx.send(":white_check_mark: 모든 명령어를 다시 불러왔습니다!")
+    else:
+        app.unload_extension(f"Cogs.{extension}")
+        app.load_extension(f"Cogs.{extension}")
+        await ctx.send(f":white_check_mark: {extension}을(를) 다시 불러왔습니다!"
+
+
+    
 
 @bot.command()
 async def reset(ctx):
