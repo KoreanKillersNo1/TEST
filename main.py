@@ -35,6 +35,10 @@ async def 도움(ctx):
     await ctx.send(embed=embed)
 
 @bot.command()
+async def 개발자(ctx)
+    embed = discord.Embed(title = "개발자", description = "『킬쟁이』#1798", color = 0ㅌ6ㄸ1753
+    
+@bot.command()
 async def 주사위(ctx):
     result, _color, bot1, bot2, user1, user2, a, b = dice()
 
