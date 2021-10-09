@@ -282,9 +282,6 @@ async def reload_commands(ctx, extension=None):
         app.load_extension(f"Cogs.{extension}")
         await ctx.send(f":white_check_mark: {extension}을(를) 다시 불러왔습니다!"
 
-
-    
-
 @bot.command()
 async def reset(ctx):
     resetData()
