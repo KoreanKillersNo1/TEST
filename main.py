@@ -265,7 +265,7 @@ async def 송금(ctx, user: discord.User, money):
 @bot.command()
 async def 버튼(salf, ctx):
     await ctx.channel.send(
-        "버튼 테스트  :saile:,
+        "버튼 테스트  :smile:,
         components=[
             button(style=ButtonStyle.blue, label="버튼 1")
             button(style=ButtonStyle.red, label="버튼 2")
