@@ -274,13 +274,13 @@ async def reload_commands(ctx, extension=None):
     if extension is None: # extension이 None이면 (그냥 !리로드 라고 썼을 때)
         for filename in os.listdir("Cogs"):
             if filename.endswith(".py"):
-                app.unload_extension(f"Cogs.{filename[:-3]}")
-                app.load_extension(f"Cogs.{filename[:-3]}")
+                bot.unload_extension(f"Cogs.{filename[:-3]}")
+                bot.load_extension(f"Cogs.{filename[:-3]}")
                 await ctx.send(":white_check_mark: 모든 명령어를 다시 불러왔습니다!")
     else:
-        app.unload_extension(f"Cogs.{extension}")
-        app.load_extension(f"Cogs.{extension}")
-        await ctx.send(f":white_check_mark: {extension}을(를) 다시 불러왔습니다!"
+        bot.unload_extension(f"Cogs.{extension}")
+        bot.load_extension(f"Cogs.{extension}")
+        await ctx.send(f":white_check_mark: {extension}을(를) 다시 불러왔습니다!")
 
 @bot.command()
 async def reset(ctx):
