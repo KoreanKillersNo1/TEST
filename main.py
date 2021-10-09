@@ -43,7 +43,7 @@ async def 주사위(ctx):
     result, _color, bot1, bot2, user1, user2, a, b = dice()
 
     embed = discord.Embed(title = "주사위 게임 결과", description = None, color = _color)
-    embed.add_field(name = "CODE Bot의 숫자 " + bot1 + "+" + bot2, value = ":game_die: " + a, inline = False)
+    embed.add_field(name = "GAME Bot의 숫자 " + bot1 + "+" + bot2, value = ":game_die: " + a, inline = False)
     embed.add_field(name = ctx.author.name+"의 숫자 " + user1 + "+" + user2, value = ":game_die: " + b, inline = False)
     embed.set_footer(text="결과: " + result)
     await ctx.send(embed=embed)
