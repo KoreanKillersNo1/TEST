@@ -34,10 +34,13 @@ async def on_ready():
     print('운영자 : 킬쟁이')
     game = discord.Game('GAME 봇ㅣq!도움ㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤㅤ')
     await bot.change_presence(status=discord.Status.online, activity=game)
+    
+    if not discord.opus.is_loaded():
+        discord.opus.load_opus('opus')
 
 
 @bot.command()
-async def play(ctx, *, url):
+async def url(ctx, *, url):
     YDL_OPTIONS = {'format': 'bestaudio','noplaylist':'True'}
     FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
 
@@ -57,7 +60,7 @@ async def 재생(ctx, *, msg):
         YDL_OPTIONS = {'format': 'bestaudio', 'noplaylist':'True'}
         FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
             
-        chromedriver_dir = "자신의 경로를 적어주세요!"
+        driver = load_chrome_driver()
         driver = webdriver.Chrome(chromedriver_dir)
         driver.get("https://www.youtube.com/results?search_query="+msg+"+lyrics")
         source = driver.page_source
@@ -119,7 +122,7 @@ async def 멜론차트(ctx):
         YDL_OPTIONS = {'format': 'bestaudio', 'noplaylist':'True'}
         FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
             
-        chromedriver_dir = r"D:\Discord_Bot\chromedriver.exe"
+        driver = load_chrome_driver()
         driver = webdriver.Chrome(chromedriver_dir, options = options)
         driver.get("https://www.youtube.com/results?search_query=멜론차트")
         source = driver.page_source
@@ -149,7 +152,7 @@ def title(msg):
     options = webdriver.ChromeOptions()
     options.add_argument("headless")
 
-    chromedriver_dir = r"D:\Discord_Bot\chromedriver.exe"
+    driver = load_chrome_driver()
     driver = webdriver.Chrome(chromedriver_dir, options = options)
     driver.get("https://www.youtube.com/results?search_query="+msg+"+lyrics")
     source = driver.page_source
@@ -316,7 +319,7 @@ async def 즐겨찾기추가(ctx, *, msg):
             options = webdriver.ChromeOptions()
             options.add_argument("headless")
 
-            chromedriver_dir = r"D:\Discord_Bot\chromedriver.exe"
+            driver = load_chrome_driver()
             driver = webdriver.Chrome(chromedriver_dir, options = options)
             driver.get("https://www.youtube.com/results?search_query="+msg+"+lyrics")
             source = driver.page_source
@@ -419,7 +422,7 @@ async def 노래도움(ctx):
 \nq!노래도움 -> 뮤직봇의 모든 명령어를 볼 수 있습니다.
 \nq!참여/join -> 뮤직봇을 자신이 속한 채널로 부릅니다.
 \nq!나가/leave -> 뮤직봇을 자신이 속한 채널에서 내보냅니다.
-\nq!play [노래링크] -> 유튜브URL를 입력하면 뮤직봇이 노래를 틀어줍니다.
+\nq!url [노래링크] -> 유튜브URL를 입력하면 뮤직봇이 노래를 틀어줍니다.
 (목록재생에서는 사용할 수 없습니다.)
 \nq!재생 [노래이름] -> 뮤직봇이 노래를 검색해 틀어줍니다.
 \nq!노래끄기 -> 현재 재생중인 노래를 끕니다.
