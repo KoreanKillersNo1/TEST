@@ -6,3 +6,9 @@ pynacl
 beautifulsoup4
 requests
 selenium
+discord.py[voice]
+pip
+ffmpeg-python
+lxml
+urllib3
+Options
