@@ -4,7 +4,7 @@ from game import *
 from user import *
 from discord.ext import commands
 from selenium import webdriver
-from seleium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.options import Options
 from discord.utils import get
 from discord import FFmpegPCMAudio
 
