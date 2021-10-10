@@ -10,7 +10,7 @@ class Core(commands.Cog):
     async def printit(self, ctx): #수정
         await ctx.send(":) Python Bot에 의해 출력됨.")
     
-    @command.command(name="참여")
+    @commands.command(name="참여")
     async def join(self, ctx):
         try:
             global vc
@@ -22,7 +22,7 @@ class Core(commands.Cog):
             except:
                 await ctx.send("채널에 유저가 접속해있지 않네요..")
     
-    @command.command(name="나가")
+    @commands.command(name="나가")
     async def leave(self, ctx):
         try:
             await vc.disconnect()
