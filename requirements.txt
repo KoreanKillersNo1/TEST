@@ -3,3 +3,6 @@ asyncio
 openpyxl
 youtube_dl
 pynacl
+beautifulsoup4
+requests
+selenium
