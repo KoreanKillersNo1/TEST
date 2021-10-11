@@ -691,19 +691,19 @@ async def reset(ctx):
     resetData()
 
 @bot.command()
-async def add(ctx, money):
+async def add(ctx, user: discord.User, money):
     user, row = checkUser(ctx.author.name, ctx.author.id)
     addMoney(row, int(money))
     print("money")
 
 @bot.command()
-async def exp(ctx, exp):
+async def exp(ctx, user: discord.User, exp):
     user, row = checkUser(ctx.author.name, ctx.author.id)
     addExp(row, int(exp))
     print("exp")
 
 @bot.command()
-async def lvl(ctx, lvl):
+async def lvl(ctx, user: discord.User, lvl):
     user, row = checkUser(ctx.author.name, ctx.author.id)
     adjustlvl(row, int(lvl))
     print("lvl")
