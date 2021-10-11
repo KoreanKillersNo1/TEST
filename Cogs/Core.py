@@ -28,6 +28,7 @@ class Core(commands.Cog):
             await vc.disconnect()
         except:
                 await ctx.send("이미 그 채널에 속해있지 않아요!")
+                     
         
     
     
