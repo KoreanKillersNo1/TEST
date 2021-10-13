@@ -541,6 +541,27 @@ async def 랭킹(ctx):
 
     await ctx.send(embed=embed) 
 
+@bot.command(name="추방", pass_context=True)
+async def kick(ctx, *, user_name: discord.Member, reason=None):
+    await user_name.kick(reason=reason)
+    await ctx.send(str(user_name)+"을(를) 추방하였습니다.")
+
+@bot.command(name="밴", pass_context=True)
+async def ban(ctx, *, user_name: discord.Member):
+    await user_name.ban()
+    await ctx.send(str(user_name)+"을(를) 차단을 했습니다.")
+
+@bot.command(name="언밴", pass_context=True)
+async def unban(ctx, *, user_name):
+    banned_users = await ctx.guild.bans()
+    member_name, member_discriminator = user_name.split('#')
+    for ban_entry in banned_users:
+        user = ban_entry.user
+        if (user.name, user.discriminator) == (member_name, member_discriminator):
+            await ctx.guild.unban(user)
+            await ctx.send(f"{user.mention}을(를) 차단을 풀었습니다.")
+            return
+
 @bot.command()
 async def 회원가입(ctx):
     print("회원가입이 가능한지 확인합니다.")
