@@ -5,9 +5,6 @@ import asyncio
 
 class Administrator(commands.Cog, name="관리자"):
 
-    """
-    관리자 명령어들입니다.
-    """
 
     def __init__(self, bot):
         self.bot = bot
@@ -15,7 +12,7 @@ class Administrator(commands.Cog, name="관리자"):
     @commands.command(name="경고", help="[관리자 전용] 경고를 부여합니다.", usage="!경고 [유저] (경고 횟수)")
     @commands.has_permissions(administrator=True)
     async def give_warning(self, ctx, user_name: discord.Member, amount: int=1):
-        try: # 에러 처리
+        try:
             with open("bin/warnings.bin", "rb") as f:
             warning_data = pickle.load(f)
         except FileNotFoundError:
