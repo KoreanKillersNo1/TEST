@@ -12,3 +12,4 @@ ffmpeg-python
 lxml
 urllib3
 Options
+pickle
