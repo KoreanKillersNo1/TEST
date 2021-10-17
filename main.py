@@ -1,4 +1,8 @@
-import asyncio, discord, time, bs4, pickle
+import asyncio
+import discord
+import time
+import bs4
+import pickle
 from ydl import *
 from game import *
 from user import *
