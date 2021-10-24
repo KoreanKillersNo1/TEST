@@ -3,7 +3,7 @@ import pickle
 from discord.ext import commands
 import asyncio
 
-class Administrator(commands.Cog, name="관리자"):
+class Administrator(commands.Cog):
 
 
     def __init__(self, bot):
