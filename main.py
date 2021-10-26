@@ -627,7 +627,7 @@ async def 내정보(ctx):
 
 @bot.command()
 async def 정보(ctx, user: discord.User):
-    userExistance, userRow = checkUser(user.name, user.id)
+    userExistance, userRow = checkUser(ctx.author.name, ctx.author.id)
 
     if not userExistance:
         print("DB에서 ", user.name, "을 찾을 수 없습니다")
