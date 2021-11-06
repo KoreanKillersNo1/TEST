@@ -717,21 +717,31 @@ async def reset(ctx):
 
 @bot.command()
 async def add(ctx, user: discord.User, money):
-    user, row = checkUser(ctx.author.name, ctx.author.id)
-    addMoney(row, int(money))
-    print("money")
+    if message.author.guild_permissions.administrator:
+        user, row = checkUser(ctx.author.name, ctx.author.id)
+        addMoney(row, int(money))
+        print("money")
+    else:
+      await ctx.send("{}, 당신은 관리자가 아닙니다".format(message.author.mention))
 
 @bot.command()
 async def exp(ctx, user: discord.User, exp):
-    user, row = checkUser(ctx.author.name, ctx.author.id)
-    addExp(row, int(exp))
-    print("exp")
+    if message.author.guild_permissions.administrator:
+        user, row = checkUser(ctx.author.name, ctx.author.id)
+        addExp(row, int(exp))
+        print("exp")
+    else:
+      await ctx.send("{}, 당신은 관리자가 아닙니다".format(message.author.mention))
 
 @bot.command()
 async def lvl(ctx, user: discord.User, lvl):
-    user, row = checkUser(ctx.author.name, ctx.author.id)
-    adjustlvl(row, int(lvl))
-    print("lvl")
+    if message.author.guild_permissions.administrator:
+        user, row = checkUser(ctx.author.name, ctx.author.id)
+        adjustlvl(row, int(lvl))
+        print("lvl")
+    else:
+      await ctx.send("{}, 당신은 관리자가 아닙니다".format(message.author.mention))
+
 
 @bot.event
 async def on_message(message):
