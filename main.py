@@ -725,7 +725,7 @@ async def moneyadd(ctx, user: discord.User, money):
 async def exp(ctx, user: discord.User, exp):
     user, row = checkUser(ctx.author.name, ctx.author.id)
     addExp(row, int(exp))
-    print("exp")
+    print("exp") 
 
 @bot.command()
 async def lvl(ctx, user: discord.User, lvl):
