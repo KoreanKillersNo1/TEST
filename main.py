@@ -717,30 +717,21 @@ async def reset(ctx):
 
 @bot.command()
 async def moneyadd(ctx, user: discord.User, money):
-    if message.author.guild_permissions.administrator:
-        user, row = checkUser(ctx.author.name, ctx.author.id)
-        addMoney(row, int(money))
-        print("money")
-    else:
-      await ctx.send("{}, 당신은 관리자가 아닙니다".format(message.author.mention))
+    user, row = checkUser(ctx.author.name, ctx.author.id)
+    addMoney(row, int(money))
+    print("money")
 
 @bot.command()
 async def exp(ctx, user: discord.User, exp):
-    if message.author.guild_permissions.administrator:
-        user, row = checkUser(ctx.author.name, ctx.author.id)
-        addExp(row, int(exp))
-        print("exp")
-    else:
-      await ctx.send("{}, 당신은 관리자가 아닙니다".format(message.author.mention))
+    user, row = checkUser(ctx.author.name, ctx.author.id)
+       addExp(row, int(exp))
+       print("exp")
 
 @bot.command()
 async def lvl(ctx, user: discord.User, lvl):
-    if message.author.guild_permissions.administrator:
-        user, row = checkUser(ctx.author.name, ctx.author.id)
-        adjustlvl(row, int(lvl))
-        print("lvl")
-    else:
-      await ctx.send("{}, 당신은 관리자가 아닙니다".format(message.author.mention))
+    user, row = checkUser(ctx.author.name, ctx.author.id)
+    adjustlvl(row, int(lvl))
+    print("lvl")
 
 
 @bot.event
