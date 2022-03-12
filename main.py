@@ -716,7 +716,7 @@ async def reset(ctx):
     resetData()
 
 @bot.command()
-async def add(ctx, user: discord.User, money):
+async def moneyadd(ctx, user: discord.User, money):
     if message.author.guild_permissions.administrator:
         user, row = checkUser(ctx.author.name, ctx.author.id)
         addMoney(row, int(money))
