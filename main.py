@@ -5,7 +5,7 @@ import bs4
 import pickle
 from ydl import *
 from game import *
-from user import *
+from user import * 
 from discord.ext import commands
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
